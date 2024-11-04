@@ -28,7 +28,7 @@ jobs:
         run: npm ci
       - name: Run Tests
         run: npm test
-    
+  # 03 - Deploy 
   deploy:
     needs: test
     runs-on: ubuntu-latest
