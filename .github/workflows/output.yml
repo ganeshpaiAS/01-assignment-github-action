@@ -1,0 +1,14 @@
+name: Output Github Events
+on: workflow_dispatch
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output Github Content
+        run: echo "${{ toJSON(github.event) }}"
+      - name: Output Job Details
+        run: echo "${{ toJSON(job) }}"
+      - name: Dump runner context
+        env:
+          RUNNER_CONTEXT: ${{ toJson(runner) }}
+        run: echo "$RUNNER_CONTEXT"
